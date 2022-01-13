@@ -1,125 +1,32 @@
 <template>
   <div class="home">
-    <base-form-generator
-      :schema="examSchema"
-      @submit-form-properties="submitProperties"
-    />
+    <div class="home__route">
+      <router-link
+        class="home__route-links"
+        :to="{ name: 'questions-content' }"
+      >
+        Question Content (1)
+      </router-link>
+      <router-link class="home__route-links" :to="{ name: 'todos-content' }">
+        Todos Content (2)
+      </router-link>
+    </div>
   </div>
 </template>
 
 <script>
-import * as Yup from "yup";
-import BaseFormGenerator from "@/components/BaseFormGenerator";
 export default {
   name: "Home",
-  components: {
-    BaseFormGenerator,
-  },
-  data() {
-    return {
-      examSchema: [
-        {
-          type: "radio",
-          name: "one",
-          question:
-            " << Informatsiya >> so'zi lotinchadan qaysi so'zdan olingan ?",
-          answers: [
-            {
-              text: "informatio",
-              id: 0,
-            },
-            {
-              text: "Inform",
-              id: 1,
-            },
-            {
-              text: "Formatika",
-              id: 2,
-            },
-          ],
-          rules: Yup.string().required(),
-        },
-        {
-          type: "checkbox",
-          name: "two",
-          question: "How to add a Checkboxes question to your survey:",
-          answers: [
-            {
-              id: 0,
-              text: "Go to the Design survey section.",
-            },
-            {
-              id: 1,
-              text: "From the Builder section, choose Checkboxes",
-            },
-            {
-              id: 3,
-              text: "Enter the question and answer text",
-            },
-            {
-              id: 4,
-              text: "(Optional) Set up any additional options or settings",
-            },
-          ],
-          rules: Yup.array().required(),
-        },
-        {
-          type: "text",
-          name: "three",
-          question: "Familiya va Ismingizni yozib qoldiring:",
-          answers: null,
-          rules: Yup.string().required(),
-        },
-      ],
-    };
-  },
-  methods: {
-    submitProperties(userAnswers) {
-      // Right Answer Key
-      //  1 ) => 4 rate
-      //  2 ) => 5 rate
-      //  3 ) => 1 rate
-      //  overall => 10 rate
-
-      const rightAnswers = [
-        {
-          result: 1,
-          rate: 4,
-        },
-        {
-          result: [0, 3, 4],
-          rate: 5,
-        },
-        {
-          result: "sultonov komron",
-          rate: 1,
-        },
-      ];
-
-      let overall = 0;
-
-      const addRate = (rate) => {
-        overall += rate;
-      };
-
-      userAnswers.forEach((userAnswer, index) => {
-        const { result, rate } = rightAnswers[index];
-
-        const primitiveAndEqual =
-          (typeof userAnswer === "number" || typeof userAnswer === "string") &&
-          userAnswer === result;
-        primitiveAndEqual && addRate(rate);
-
-        if (Array.isArray(userAnswer)) {
-          const sortedUserAnswer = userAnswer.sort();
-          const isRight =
-            JSON.stringify(sortedUserAnswer) == JSON.stringify(result);
-          isRight && addRate(rate);
-        }
-      });
-
-      alert(`your overall rate : ${overall}`);
-    },
-  },
 };
 </script>
+
+<style lang="scss" scoped>
+.home {
+  &__route{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+</style>

@@ -25,4 +25,10 @@
     }
   }
 }
+
+.go__back-button {
+  display: flex;
+  justify-content: flex-start;
+  cursor: pointer;
+}
 </style>
