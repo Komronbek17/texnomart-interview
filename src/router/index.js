@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import TheQuestionsContent from '../views/TheQuestionsContent.vue'
 import TheTodosContent from '../views/TheTodosContent.vue'
+import TheUserFormContent from '../views/TheUserFormContent.vue'
 
 const routes = [
   {
@@ -13,6 +14,11 @@ const routes = [
     path: '/questions', 
     name: 'questions-content',
     component: TheQuestionsContent
+  },
+  {
+    path: '/user-form',
+    name: 'user-form',
+    component: TheUserFormContent
   },
   {
     path: '/todos', 

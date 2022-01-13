@@ -79,46 +79,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.content-block {
-  display: block;
-}
-
-.form {
-  &__content {
-    border: 1px solid red;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    margin: 16px auto;
-    padding: 8px;
-
-    &-question {
-      margin: 8px;
-    }
-
-    &-input {
-      margin: 8px;
-    }
-
-    &-error-message {
-      margin: 8px;
-      color: red;
-      font-size: 16px;
-    }
-
-    &-submit-button {
-      display: block;
-      border: 1px solid #35495e;
-      transition: all 0.5s;
-      color: #35495e;
-      text-decoration: none;
-      width: 150px;
-      height: 30px;
-      line-height: 30px;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-  }
-}
+<style lang="scss"  scoped>
+@import "src/assets/scss/base-form-generator.scss";
 </style>

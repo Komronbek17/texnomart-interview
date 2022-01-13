@@ -7,8 +7,14 @@
       >
         Question Content (1)
       </router-link>
+      <router-link
+          class="home__route-links"
+          :to="{ name: 'user-form' }"
+      >
+        User Form Content (2)
+      </router-link>
       <router-link class="home__route-links" :to="{ name: 'todos-content' }">
-        Todos Content (2)
+        Todos Content (3)
       </router-link>
     </div>
   </div>

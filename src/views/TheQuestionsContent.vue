@@ -10,7 +10,7 @@
 
 <script>
 import * as Yup from "yup";
-import BaseFormGenerator from "@/components/BaseFormGenerator";
+import BaseFormGenerator from "@/components/BaseQuestionFormGenerator";
 export default {
   name: "TheQuestionsContent",
   components: {
