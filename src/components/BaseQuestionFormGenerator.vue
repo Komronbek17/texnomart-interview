@@ -10,7 +10,6 @@
         <!-- Content For Checkbox Or Radio -->
         <template v-if="isTypeCheckboxOrRadio(type)">
           <label
-            class="content-block"
             v-for="{ text: answer, id: indexOfAnswer } in answers"
             :for="name + answer"
             :key="answer"

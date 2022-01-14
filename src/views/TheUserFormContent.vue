@@ -1,7 +1,7 @@
 <template>
   <div>
     <button class="go__back-button" @click="$router.go(-1)">Go Back</button>
-    <base-user-form-generator :schema="userSchema" @submitUserProperties="submitUserForm"/>
+    <base-user-form-generator :schema="userSchema" @submit="submitUserForm"/>
   </div>
 </template>
 

@@ -23,7 +23,7 @@ export default {
           type: "radio",
           name: "one",
           question:
-            " << Informatsiya >> so'zi lotinchadan qaysi so'zdan olingan ?",
+            "Informatsiya so'zi lotinchadan qaysi so'zdan olingan ?",
           answers: [
             {
               text: "informatio",
@@ -114,7 +114,7 @@ export default {
         if (Array.isArray(userAnswer)) {
           const sortedUserAnswer = userAnswer.sort();
           const isRight =
-            JSON.stringify(sortedUserAnswer) == JSON.stringify(result);
+            JSON.stringify(sortedUserAnswer) === JSON.stringify(result);
           isRight && addRate(rate);
         }
       });

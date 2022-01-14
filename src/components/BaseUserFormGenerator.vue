@@ -6,14 +6,14 @@
           :key="type + name"
           class="form__content"
       >
-          <p>{{label}}</p>
-          <v-field
-              :rules="rules"
-              :name="name"
-              :id="name + type"
-              :type="type"
-              class="form__content-input"
-          />
+        <p>{{label}}</p>
+        <v-field
+            :rules="rules"
+            :name="name"
+            :id="name + type"
+            :type="type"
+            class="form__content-input"
+        />
         <!-- Show Validation Message -->
         <error-message :name="name" class="form__content-error-message" />
       </div>
@@ -38,10 +38,11 @@ export default {
       required: true,
     },
   },
-  emits: ["submitUserProperties"],
+  emits: ["submit"],
   methods: {
-    submitUserProperties(values) {
-      this.$emit("submitUserProperties", values);
+    submitUserProperties(values,{ resetForm }) {
+      this.$emit("submit", values);
+      resetForm()
     },
   },
 };

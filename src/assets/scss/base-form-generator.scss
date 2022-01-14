@@ -1,10 +1,10 @@
-.content-block {
-    display: block;
-}
-
 .form {
+    border: 1px solid #292930;
+    margin: 16px 0 8px 0;
+    padding: 8px 0 8px 0;
+    background: #f3f3f3;
+
     &__content {
-        border: 1px solid red;
         display: flex;
         align-items: flex-start;
         flex-direction: column;
@@ -17,6 +17,7 @@
 
         &-input {
             margin: 8px;
+            padding: 8px;
         }
 
         &-error-message {
@@ -36,6 +37,12 @@
             line-height: 30px;
             border-radius: 4px;
             cursor: pointer;
+            margin-left: 16px;
         }
     }
+}
+
+.activate-form{
+    box-shadow: -13px -2px 40px -2px rgba(0,0,0,0.24);
+    border: 2px solid #2dec95;
 }
